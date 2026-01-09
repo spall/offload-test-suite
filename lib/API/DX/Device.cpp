@@ -1433,7 +1433,7 @@ public:
     return llvm::Error::success();
   }
 
-  llvm::Error executeProgram(Pipeline &P) override {
+  llvm::Error executeProgram(Pipeline &P, bool Capture = false) override {
     llvm::sys::AddSignalHandler(
         [](void *Cookie) {
           ID3D12Device *Device = (ID3D12Device *)Cookie;
